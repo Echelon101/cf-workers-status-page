@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.strueker.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,23 +15,39 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: strueker-dev # unique identifier
+    name: strueker.dev
+    description: '' # default=empty
+    url: 'https://strueker.dev/en/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: strueker-net
+    name: strueker.net
+    description: ''
+    url: 'https://strueker.net'
     method: GET
     expectStatus: 200
+    followRedirect: false
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: mail-strueker-net
+    name: Strueker Mail System
+    url: 'https://mail.strueker.net/'
     method: GET
     expectStatus: 200
+    followRedirect: false
+    
+  - id: cloud-strueker-net
+    name: Strueker Cloud
+    url: 'https://cloud.strueker.net'
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    
+  - id: bifrost-strueker-net
+    name: Strueker Bastion
+    url: 'https://bifrost.strueker.net'
+    method: GET
+    expectStatus: 200
+    followRedirect: false
