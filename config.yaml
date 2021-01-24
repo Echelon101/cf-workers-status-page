@@ -18,7 +18,7 @@ monitors:
   - id: strueker-dev # unique identifier
     name: strueker.dev
     description: '' # default=empty
-    url: 'https://strueker.dev/en/' # URL to fetch
+    url: 'https://strueker.dev/en/'
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
